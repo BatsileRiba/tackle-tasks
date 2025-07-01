@@ -73,7 +73,7 @@ main h1 {
 .search-bar {
   display: flex;
   justify-content: space-between;
-  border: #A79A9A 1px solid;
+  border: #A79A9A 2px solid;
   align-items: center;
   flex-direction: row;
   width: 95%;
@@ -140,13 +140,14 @@ main h1 {
 
 .upcoming-tasks {
   background-color: #F5F5F5;
-  border: 2px solid #FFD2D2;
+  border: 2px solid #FD2A2A;
   padding: 20px;
   border-radius: 10px;
   max-width: 95%;
   width: 95%;
   overflow: hidden;
   height:180px;
+  
 }
 
 .tasks-header {
@@ -167,7 +168,7 @@ main h1 {
   color: #FD2A2A;
   font-size: 18px;
   padding: 3px 8px;
-  border: 2px solid #FFD2D2;
+  border: 2px solid #FD2A2A;
   border-radius: 100px;
   cursor: pointer;
   font-weight: bold;
@@ -216,7 +217,7 @@ main h1 {
 /**Current tasks styles**/
 .current-tasks {
   background-color: #F5F5F5;
-  border: 2px solid #f8d975;
+  border: 2px solid #FFC300;
   padding: 20px;
   border-radius: 10px;
   max-width: 95%;
@@ -293,7 +294,7 @@ main h1 {
 /**Completed tasks styles**/
 .completed-tasks {
   background-color: #F5F5F5;
-  border: 2px solid #B1FDB1;
+  border: 2px solid #3CAF3C;
   padding: 20px;
   border-radius: 10px;
   max-width: 95%;
@@ -321,7 +322,7 @@ main h1 {
   color: #3CAF3C;
   font-size: 18px;
   padding: 3px 8px;
-  border: 2px solid #B1FDB1;
+  border: 2px solid #3CAF3C;
   border-radius: 100px;
   cursor: pointer;
   font-weight: bold;
