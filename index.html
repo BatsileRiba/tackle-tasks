@@ -7,8 +7,82 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <header>
+        <h1>Tackle Tasks</h1>
+        <img src="assets/menu-dots.png" alt="Menu Icon">
+    </header>
+
+    <main>
+        <h1 id="greeting">Welcome!</h1>
     
+        <div class="search-bar">
+            <div class="input-wrapper">
+                <input type="text" id="search-input" autocomplete="off" />
+                <label class="placeholder" for="search-input">Search for tasks...</label>
+            </div>
+            <div class="search-selection">
+            <hr>
+            <img src="assets/search-icon.png" alt="Search Icon">
+            </div>
+        </div>
+
+
+
+        <div class="upcoming-tasks">
+            <div class="tasks-header">
+                <h1>Upcoming Tasks</h1>
+                <button id="addTaskBtn">+</button>
+            </div>
+
+            <div class="task-list">
+                 <div class="tasks empty upcoming" id="taskContainer">
+                </div>
+                 <img src="assets/red-arrow.png" id="arrow" alt="Next tasks arrow">
+            </div>
+        </div>
+        
+        <div class="current-tasks">
+            <div class="tasks-header-current">
+                <h1>Current Tasks</h1>
+                <button id="addTaskBtn2">+</button>
+            </div>
+
+            <div class="task-list-current">
+                 <div class="tasks empty current" id="taskContainer">
+                </div>
+                 <img src="assets/yellow-arrow.png" id="arrow" alt="Next tasks arrow">
+            </div>
+        </div>
+
+         <div class="completed-tasks">
+            <div class="tasks-header-completed">
+                <h1>Completed Tasks</h1>
+                <button id="addTaskBtn3">+</button>
+            </div>
+
+            <div class="task-list-completed">
+                 <div class="tasks empty completed" id="taskContainer">
+                </div>
+                 <img src="assets/green-arrow.png" id="arrow" alt="Next tasks arrow">
+            </div>
+        </div>
+
+        <div class="streak-tracker">
+            <div class="streak-header">
+                <h2 id="month-name">[CurrentMonth] Streak</h2>
+                <button class="streak-action-btn" title="Open analytics">
+                <img src="assets/bar-chart.png" alt="Streak Icon">
+                </button>
+            </div>
+            <div class="streak-grid" id="streakGrid">
+    
+            </div>
+        </div>
+
+    </main>
 </body>
 <footer>
     <p>© 2023 Tackle Tasks. All rights reserved.</p>
+</footer>
+<script src="script.js"></script>
 </html>
