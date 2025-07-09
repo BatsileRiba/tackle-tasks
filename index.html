@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tackle Tasks| Get it done!</title>
     <link rel="stylesheet" href="styles.css">
+
 </head>
 <body>
     <header>
@@ -85,30 +86,6 @@
     </footer>
 
     <script src="script.js"></script>
-    <script>
-        window.addEventListener("DOMContentLoaded", () => {
-  const containers = {
-    upcoming: document.getElementById("taskContainer1"),
-    current: document.getElementById("taskContainer2"),
-    completed: document.getElementById("taskContainer3")
-  };
-
-  ["upcoming", "current", "completed"].forEach(section => {
-    const container = containers[section];
-    container.innerHTML = "";
-
-    const tasks = JSON.parse(localStorage.getItem(section)) || [];
-    tasks.forEach((task, index) => {
-      const card = document.createElement("div");
-      card.classList.add("task-card", section);
-      card.textContent = task.title;
-      card.addEventListener("click", () => openTaskModal(task, section, index));
-      container.appendChild(card);
-    });
-  });
-});
-
-    </script>
     
 </body>
 </html>

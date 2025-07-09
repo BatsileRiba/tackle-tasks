@@ -2,7 +2,32 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+        -webkit-tap-highlight-color: transparent;
 }
+
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  ::-webkit-selection {
+      background: transparent;
+      color: inherit;
+  }
+}
+
+input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+a:focus,
+a:visited,
+a:active {
+  outline: none;
+}
+
+
 body{
     font-family: poppins, sans-serif;
     background-color: white;
@@ -60,10 +85,10 @@ main h1 {
 #greeting::after {
   content: '';
   position: absolute;
-  bottom: 0;
+  bottom: 3px;
   left: 0;
   width: 100%;
-  height: 20px;
+  height: 15px;
   background-color: #B1FDB1;
   border-radius: 4px;
   z-index: -1;
@@ -147,6 +172,7 @@ main h1 {
   width: 95%;
   overflow: hidden;
   height:max-content;
+  min-height: 145px;
   
 }
 
@@ -167,7 +193,7 @@ main h1 {
   background-color: transparent;
   color: #FD2A2A;
   font-size: 18px;
-  padding: 3px 8px;
+  padding: 2px 8px;
   border: 2px solid #FD2A2A;
   border-radius: 100px;
   cursor: pointer;
@@ -224,6 +250,7 @@ main h1 {
   width: 95%;
   overflow: hidden;
   height:max-content;
+  min-height: 145px;
   
 }
 
@@ -244,7 +271,7 @@ main h1 {
   background-color: transparent;
   color: #FFC300;
   font-size: 18px;
-  padding: 3px 8px;
+  padding: 2px 8px;
   border: 2px solid #FFC300;
   border-radius: 100px;
   cursor: pointer;
@@ -301,6 +328,7 @@ main h1 {
   width: 95%;
   overflow: hidden;
   height:max-content;
+  min-height: 150px;
   
 }
 
@@ -321,7 +349,7 @@ main h1 {
   background-color: transparent;
   color: #3CAF3C;
   font-size: 18px;
-  padding: 3px 8px;
+  padding: 2px 8px;
   border: 2px solid #3CAF3C;
   border-radius: 100px;
   cursor: pointer;
@@ -400,9 +428,9 @@ main h1 {
   content: '';
   position: absolute;
   left: -4px;
-  bottom: 2px;
+  bottom: 3px;
   width: 110%;
-  height: 6px;
+  height: 15px;
   background-color: #B1FDB1;
   border-radius: 4px;
   z-index: -1;
@@ -496,6 +524,8 @@ main h1 {
   margin-top: 50px;
   z-index: 1;
   position: relative;
+  margin-left: 10px;
+
 }
 
 #add-task-form label, #add-task-form input, #add-task-form button[type="submit"] {
@@ -503,13 +533,25 @@ main h1 {
   width: 100%;
 }
 
+#task-title::placeholder {
+  opacity: 0.4; 
+  color: #888;
+  font-style: italic; 
+}
+
+#task-description::placeholder {
+  opacity: 0.4; 
+  color: #888;
+  font-style: italic; 
+}
+
 .add-task-section h1::after {
   content: '';
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 0;
-  height: 12px;
+  bottom: 3px;
+  height: 13px;
   background-color: #B1FDB1;
   border-radius: 4px;
   z-index: -1;
@@ -527,6 +569,7 @@ main h1 {
   margin-top: 10px;
   display: inline-block;
   text-align: left;
+  margin-left: 15px;
 
 }
 
@@ -570,11 +613,12 @@ main h1 {
   text-decoration: underline;
   text-decoration-thickness: 3px;
   display: inline-block;
+  margin-left: 10px;
 }
 
-
-
-
+.cancel-btn:hover {
+  scale: 1.05;
+} 
 
 
 .form-group {
@@ -586,7 +630,7 @@ main h1 {
 label {
   font-weight: 600;
   margin-bottom: 6px;
-  color: #A79A9A;
+  color: #333;
   font-size: 14px;
 }
 
@@ -608,6 +652,7 @@ input[type="date"] {
   margin: 5px 0;
   cursor: pointer;
   border-radius: 5px;
+  height: max-content;
 }
 
 .task-card.current {
@@ -617,6 +662,7 @@ input[type="date"] {
   margin: 5px 0;
   cursor: pointer;
   border-radius: 5px;
+  height: max-content;
 }
 
 .task-card.completed {
@@ -626,6 +672,7 @@ input[type="date"] {
   margin: 5px 0;
   cursor: pointer;
   border-radius: 5px;
+  height: max-content;
 }
 
 .modal {
@@ -688,7 +735,7 @@ input[type="date"] {
 .modal-content h2 {
   margin-top: 0;
   margin-bottom: 24px;
-  color: #1f2937;
+  color: #333;
   font-size: 1.5rem;
   font-weight: 700;
   text-align: center;
@@ -696,7 +743,7 @@ input[type="date"] {
 
 .modal-buttons {
   display: flex;
-  gap: 12px;
+  gap: 15px;
   justify-content: center;
   flex-wrap: wrap;
   margin-top: 24px;
@@ -706,14 +753,14 @@ input[type="date"] {
 .modal-buttons button {
   padding: 12px 24px;
   border: none;
-  border-radius: 12px;
+  border-radius: 9px;
   cursor: pointer;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 14px;
   transition: all 0.2s ease;
   position: relative;
   overflow: hidden;
-  min-width: 120px;
+  min-width: 100px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -721,7 +768,6 @@ input[type="date"] {
 .modal-content button:hover,
 .modal-buttons button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .modal-content button:active,
@@ -731,31 +777,27 @@ input[type="date"] {
 
 .modal-content button#deleteTaskBtn,
 #deleteBtn {
-  background: #FD2A2A;
-  color: white;
+  background-color: #fddde6;
+  border: 1px solid #e79ab2;
+  color: #FD2A2A;
+  
 }
 
 
 .modal-content button#moveTaskBtn,
 #pushCompletedBtn {
-  background:#3CAF3C;
-  color: white;
+  background-color: #d9f7d9;
+  border: 1px solid #a6d8a6;
+  color: #3CAF3C;
 }
 
-
-
-/* Close button styling */
 .modal-content button#closeModalBtn,
 #closeBtn {
-  background: #A79A9A;
-  color: white;
-  box-shadow: 0 4px 15px rgba(107, 114, 128, 0.3);
+  background: #ddd3d3;
+  color: #333;
+  border: 1px solid #A79A9A;
 }
 
-.modal-content button#closeModalBtn:hover,
-#closeBtn:hover {
-  box-shadow: 0 8px 25px rgba(107, 114, 128, 0.4);
-}
 
 .modal-content button#moveTaskBtn {
   box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
@@ -810,3 +852,30 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+
+
+.task-card {
+    cursor: move;
+}
+
+.task-card.dragging {
+    opacity: 0.5;
+    
+}
+
+.drag-over {
+    border: 1.5px dashed #A79A9A;
+    background-color: #F5F5F5;
+    
+}
+
+.valid-drop-zone, .drag-over {
+    border: 1.5px dashed #A79A9A;
+    border-radius: 9px;
+    width: 100%;
+    height: 70px;
+    padding: 15px 15px;
+  }
+
+  
