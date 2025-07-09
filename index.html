@@ -26,31 +26,29 @@
             </div>
         </div>
 
-
-
         <div class="upcoming-tasks">
             <div class="tasks-header">
                 <h1>Upcoming Tasks</h1>
-                <button id="addTaskBtn">+</button>
+                <button id="addTaskBtn" class="add">+</button>
             </div>
 
             <div class="task-list">
-                 <div class="tasks empty upcoming" id="taskContainer">
+                 <div class="tasks empty upcoming" id="taskContainer1">
                 </div>
-                 <img src="assets/red-arrow.png" id="arrow" alt="Next tasks arrow">
+                 <img src="assets/red-arrow.png" id="arrow1" alt="Next tasks arrow">
             </div>
         </div>
-        
+
         <div class="current-tasks">
             <div class="tasks-header-current">
                 <h1>Current Tasks</h1>
-                <button id="addTaskBtn2">+</button>
+                <button id="addTaskBtn2" class="add">+</button>
             </div>
 
             <div class="task-list-current">
-                 <div class="tasks empty current" id="taskContainer">
+                 <div class="tasks empty current" id="taskContainer2">
                 </div>
-                 <img src="assets/yellow-arrow.png" id="arrow" alt="Next tasks arrow">
+                 <img src="assets/yellow-arrow.png" id="arrow2" alt="Next tasks arrow">
             </div>
         </div>
 
@@ -61,9 +59,9 @@
             </div>
 
             <div class="task-list-completed">
-                 <div class="tasks empty completed" id="taskContainer">
+                 <div class="tasks empty completed" id="taskContainer3">
                 </div>
-                 <img src="assets/green-arrow.png" id="arrow" alt="Next tasks arrow">
+                 <img src="assets/green-arrow.png" id="arrow3" alt="Next tasks arrow">
             </div>
         </div>
 
@@ -80,9 +78,37 @@
         </div>
 
     </main>
+    
+
+    <footer>
+        <p>© 2025 Tackle Tasks. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        window.addEventListener("DOMContentLoaded", () => {
+  const containers = {
+    upcoming: document.getElementById("taskContainer1"),
+    current: document.getElementById("taskContainer2"),
+    completed: document.getElementById("taskContainer3")
+  };
+
+  ["upcoming", "current", "completed"].forEach(section => {
+    const container = containers[section];
+    container.innerHTML = "";
+
+    const tasks = JSON.parse(localStorage.getItem(section)) || [];
+    tasks.forEach((task, index) => {
+      const card = document.createElement("div");
+      card.classList.add("task-card", section);
+      card.textContent = task.title;
+      card.addEventListener("click", () => openTaskModal(task, section, index));
+      container.appendChild(card);
+    });
+  });
+});
+
+    </script>
+    
 </body>
-<footer>
-    <p>© 2025 Tackle Tasks. All rights reserved.</p>
-</footer>
-<script src="script.js"></script>
 </html>

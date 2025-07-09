@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tackle Tasks | Add a task</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+        <section class="add-task-section">
+            <H1>Create Task</H1>
+            <div>
+                <form id="add-task-form">
+                    <label for="task-title">Task Title:</label>
+                    <input type="text" id="task-title" name="task-title" maxlength="12" placeholder="12 characters" required>
+
+                    <label for="task-description">Description:</label>
+                    <input type="text" id="task-description" name="task-description">
+            <div class="form-group">
+                     <label for="task-due-date">Due Date</label>
+                     <input type="date" id="task-due-date" name="task-due-date">
+            </div>
+
+
+                    <button type="submit">Create Task</button>
+                </form>
+                <button class="cancel-btn" onclick="window.location.href='index.html'">Cancel</button>
+            </div>
+        </section>
+
+</body>
+<script src="script.js"></script>
+<script>
+    const form = document.getElementById("add-task-form");
+if (form) {
+  form.addEventListener("submit", e => {
+    e.preventDefault();
+
+    const title = document.getElementById("task-title").value.trim();
+    const description = document.getElementById("task-description").value.trim();
+    const dueDate = document.getElementById("task-due-date").value;
+    const target = localStorage.getItem("taskTargetSection");
+
+    if (!title || !target) {
+      alert("Task title is required!");
+      return;
+    }
+
+    let tasks = JSON.parse(localStorage.getItem(target)) || [];
+
+ 
+    if ((target === "upcoming" || target === "current") && tasks.length >= 10) {
+      alert("You can only have 10 tasks in this section.");
+      return;
+    }
+
+    tasks.push({ title, description, dueDate });
+    localStorage.setItem(target, JSON.stringify(tasks));
+
+    window.location.href = "index.html";
+  });
+}
+</script>
+
+</html>
