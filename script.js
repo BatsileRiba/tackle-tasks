@@ -275,35 +275,3 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-window.addEventListener('load', function () {
-    const screenWidth = window.innerWidth;
-
-    if (screenWidth > 768) {
-        document.body.style.visibility = 'hidden';
-        document.body.style.background = 'white'; 
-        
-        alert("This app is not supported on desktop or tablet.\nPlease click OK then scan the QR code to access it using your phone.\n\nThank you for understanding :)");
-
-        document.body.style.visibility = 'visible';
-        document.body.innerHTML = `
-            <div style="
-                text-align: center;
-                margin-top: 80px;
-                font-family: 'Segoe UI', sans-serif;
-                padding: 0 20px;
-            ">
-                <h1 style="font-size: 3rem; margin-bottom: 20px;">Mobile Only :'(</h1>
-                <p style="font-size: 1.5rem; margin-bottom: 20px;">
-                    This web app is built exclusively for mobile devices.
-                </p>
-                <p style="font-size: 1.3rem; margin-bottom: 30px;">
-                    Please scan the QR code below with your phone:
-                </p>
-                <img src="qrcode.png" alt="Scan QR to open on mobile" style="width: 300px; height: 300px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.2);" />
-                <p style="font-size: 1.2rem; margin-top: 30px;">
-                    Thanks for understanding :)
-                </p>
-            </div>
-        `;
-    }
-});
